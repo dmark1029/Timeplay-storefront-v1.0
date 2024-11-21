@@ -1,0 +1,17 @@
+.swiper-scroll-bar {
+  padding-bottom: 20px;
+  touch-action: pan-y pinch-zoom;
+}
+.swiper-scrollbar {
+  height: 2px !important;
+  width: 86% !important;
+  left: 7% !important;
+}
+.box-shadow {
+  box-shadow: 5px 10px 20px 10px #d9ecf9 !important;
+}
+
+.my-swiper {
+  height: 9px;
+  margin-top: -4px;
+}

@@ -1,0 +1,783 @@
+.bottleShake {
+  animation: 5s ease-in-out 3s infinite bottleShake;
+}
+
+.bonusBottlePop {
+  animation: 7s linear 0 bonusBottleFade forwards;
+}
+
+.bottlePopAnimationContainer h2 {
+  width: 60%;
+  text-align: center;
+  font-family: 'Loyola Round Pro Bold';
+  color: rgb(94, 61, 31);
+  position: relative;
+  bottom: 2%;
+  padding-left: 3%;
+  animation: 7s linear bottleTextFadeIn forwards;
+  margin: 0 auto;
+}
+
+.bottlePopAnimationContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winAnimationContainer {
+  z-index: 30;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winAnimationContainer h2 {
+  width: 60%;
+  text-align: center;
+  font-family: 'Loyola Round Pro Bold';
+  position: relative;
+  top: 14.5%;
+  margin: 0 auto;
+}
+
+.backupPoster {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation:
+    0.1s linear 1s winTextFade backwards,
+    0.3s linear 7.45s fadeOut forwards;
+}
+
+.megaWin h2 {
+  animation:
+    0.1s linear 0.95s winTextFade backwards,
+    0.05s linear 1s scaleUp backwards,
+    0.3s linear 12.75s fadeOut forwards,
+    13s linear 0s megaWinColorChange backwards;
+  font-family: 'Dic Sans Black';
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+.superWin h2 {
+  animation:
+    0.1s linear 0.95s winTextFade backwards,
+    0.05s linear 1s scaleUp backwards,
+    0.3s linear 9.75s fadeOut forwards,
+    11s linear 0s superWinColorChange both;
+  font-family: 'Dic Sans Black';
+  font-weight: 700;
+  font-size: 2.25em;
+}
+
+.bigWin h2 {
+  animation:
+    0.1s linear 1.05s winTextFade backwards,
+    0.05s linear 1.1s scaleUp backwards,
+    0.3s linear 7.4s fadeOut forwards;
+  font-family: 'Dic Sans Black';
+  font-weight: 700;
+  font-size: 2.25em;
+  background: linear-gradient(to bottom, #8cec02, #ccef02);
+  -webkit-text-stroke: 1.5px #048012;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.normalWin h2 {
+  animation:
+    0.1s linear 1s winTextFade backwards,
+    0.05s linear 1.1s scaleUp backwards,
+    0.3s linear 7.35s fadeOut forwards;
+  font-family: 'Dic Sans Black';
+  font-weight: 700;
+  font-size: 2.25em;
+  background: linear-gradient(to bottom, #8cec02, #ccef02);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px #048012;
+}
+
+.bonusSpotWinText {
+  animation: 0.3s ease-out 6.8s bonusSpotWin both;
+}
+
+.buyButtonText::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  border-radius: 45%;
+  box-shadow:
+    1px 0px 12px rgb(114, 255, 255),
+    -1px -0px 12px rgb(114, 255, 255),
+    0px -1px 12px rgb(114, 255, 255),
+    -0px 1px 12px rgb(114, 255, 255);
+  background-color: rgb(114, 255, 255);
+  filter: blur(5px);
+  transform: scale(1.1);
+  animation: 2s ease-in 5s infinite idleBuyButton both;
+}
+
+.gameIntro {
+  width: 100vw;
+  z-index: 45;
+  max-width: fit-content;
+}
+
+/* container for preview pages */
+.previewContainer {
+  animation: 1s ease-out 0.5s fadeInGame both;
+}
+
+/* first preview page */
+/* animated background for preview pages */
+.background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.preview {
+  z-index: 22;
+  width: 100%;
+}
+
+.content {
+  height: 50vh;
+  overflow: scroll;
+}
+
+.header {
+  perspective: 1000px;
+}
+
+.logoContainer {
+  display: flex;
+  padding-top: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoContainer img {
+  width: 60%;
+  max-width: 100%;
+}
+
+.OTHpreviewTopPrize {
+  font-family: 'Passion One';
+  margin: 0.25em 0;
+  text-align: center;
+  animation: 1.3s ease-in-out 0s infinite previewPrizePulse;
+  width: 95%;
+  margin: 5% auto;
+  background: linear-gradient(180deg, #fcff7d, #80ff00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.6px #043514;
+}
+
+@media (prefers-reduced-motion) {
+  .OTHpreviewTopPrize {
+    background: linear-gradient(to bottom, #fcff7d, #80ff00);
+    /* color: transparent; */
+    margin: 0.25em 0;
+    background-clip: text;
+    -webkit-text-stroke: 1.6px #043514;
+    text-align: center;
+    /* width: 90%; */
+    margin: 5% auto;
+  }
+}
+
+.OTHpreviewTopPrize > span {
+  color: #b4f300;
+  background: none;
+  display: inline-block;
+  animation: 1.3s ease-in-out 0s infinite previewPrizePulse;
+}
+
+.playNow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.OTHplayNowButton {
+  background-image: url('../assets/long-button.png');
+  background-repeat: no-repeat;
+  background-position: 50% 5px;
+  background-size: contain;
+  height: 60px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.05s linear;
+  margin-bottom: 15px;
+}
+
+.OTHplayNowButton p {
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #331a10;
+  text-shadow: 0 1px 1px rgb(238, 216, 192);
+}
+
+/* instructions section */
+.luckySymbols,
+.match3 {
+  position: relative;
+  margin: 2em 1em 0 1em;
+}
+
+.bonus {
+  position: relative;
+  margin: 2em 1em 0em;
+}
+
+.luckySymbols > .sign,
+.match3 > .sign,
+.bonus > .sign {
+  position: absolute;
+  top: -22px;
+  left: 0px;
+}
+
+.luckySymbols > .sign {
+  width: 185px;
+}
+
+.match3 > .sign {
+  width: 150px;
+  left: 3px;
+}
+
+.bonus > .sign {
+  width: 100px;
+  left: 4px;
+}
+
+.match3 > .sign > img,
+.bonus > .sign > img {
+  width: 100%;
+}
+
+.luckySymbols .sign img,
+.match3 .sign img,
+.bonus .signs img {
+  max-width: 100%;
+}
+
+.luckySymbols > .instructions,
+.match3 > .instructions,
+.bonus > .instructions {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: 'Tempo Standard Heavy Condensed';
+  font-weight: 700;
+  line-height: 1.1;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 135px;
+  border: 3px #92e1e6 solid;
+  border-radius: 7px;
+  background: rgba(0, 25, 65, 0.8);
+}
+
+.bonus > .instructions {
+  height: 135px;
+  background-size: 100% 100%;
+}
+
+.bonus > .instructions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.luckySymbols > .instructions .bonusText,
+.match3 > .instructions > .bonusText {
+  width: 70%;
+  margin: 0.5em 0 0 2em;
+}
+
+.bonus > .instructions .bonusText {
+  text-align: center;
+  height: 90px;
+  width: 60%;
+  background-image: url('../assets/open-scroll.png');
+  background-position: 20% 50%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: black;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.bonus > .instructions .bonusText p {
+  padding: 1.5em 1.25em 0 1.25em;
+}
+
+.bonus span {
+  text-transform: uppercase;
+}
+
+.luckySymbols > .instructions .pufferfish {
+  width: 100px;
+  margin-right: 1em;
+}
+
+.match3 > .instructions .chests {
+  margin-right: 1em;
+  width: 130px;
+  transform: scale(1.2);
+}
+
+.bonus > .instructions .bottle {
+  width: 50px;
+  transform: rotate(20deg);
+  animation: 3s ease-in-out infinite 0s bottleShake;
+}
+
+.luckySymbols > .instructions > .text span {
+  text-transform: uppercase;
+}
+
+/* Down arrow */
+.OTHdownArrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  position: absolute;
+  bottom: 7%;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+@media (max-height: 800px) {
+  .OTHdownArrow {
+    bottom: 3%;
+  }
+}
+
+@media (min-height: 1024px) {
+  .OTHdownArrow {
+    bottom: 3.5%;
+  }
+}
+
+.OTHdownArrow img {
+  width: 35%;
+  animation: 1s ease-in-out 0s infinite previewPrizePulse;
+}
+
+/* Ticket price */
+
+.OTHticketPrice,
+.OTHodds {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.OTHticketPrice .sign,
+.OTHodds .sign {
+  position: relative;
+  top: 15px;
+}
+
+.OTHticketPrice .text,
+.OTHodds .text {
+  width: 85px;
+  height: 45px;
+  background-image: url('../assets/preview-price-bg.svg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Tempo Standard Heavy Condensed';
+}
+
+.oddsExtras {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.oddsExtrasImageContainer {
+  max-width: 100%;
+  margin-bottom: 0.75em;
+}
+
+.oddsExtrasImageContainer img {
+  width: 185px;
+}
+
+.oddsExtras p {
+  font-family: 'Tempo Standard Heavy Condensed';
+  color: white;
+  font-size: 1.15em;
+  margin-bottom: 1em;
+}
+
+.fadeOutGame {
+  animation: 0.5s linear 0s fadeOutGame forwards;
+}
+
+/* splash component */
+.splash {
+  animation: 0.5s ease-in 0s fadeFromBlack backwards;
+}
+
+/* splash animation */
+.fadeSplash {
+  animation:
+    0.5s ease-out 0s fadeToBlack forwards,
+    0.5s ease-out 0.5s fadeOutGame forwards;
+}
+
+.fadeBlackLayer {
+  animation: 0.5s ease-out 0.5s fadeOutGame forwards;
+}
+
+.blackLayer {
+  z-index: 40;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.oth-lucky-numbers-scratch-mask {
+  z-index: 1;
+  height: 100%;
+  width: auto;
+  mask-image: url('../../../assets/individual-scratch-mask.png');
+  mask-position: left;
+  transform-origin: top left;
+  mask-size: 2500% 100%;
+  mask-repeat: no-repeat;
+  animation: oth-slide-mask 1s steps(24) forwards;
+  top: 0%;
+  left: 0%;
+}
+
+.oth-user-numbers-scratch-mask {
+  z-index: 1;
+  height: 100%;
+  width: auto;
+  mask-image: url('../../../assets/individual-scratch-mask.png');
+  mask-position: left;
+  transform-origin: top left;
+  mask-size: 2500% 100%;
+  mask-repeat: no-repeat;
+  animation: oth-slide-mask 1s steps(24) forwards;
+  top: 0%;
+  left: 0%;
+}
+
+.oth-match-numbers-scratch-mask {
+  z-index: 1;
+  height: 100%;
+  width: auto;
+  mask-image: url('../../../assets/individual-scratch-mask.png');
+  mask-position: left;
+  transform-origin: top left;
+  mask-size: 2500% 100%;
+  mask-repeat: no-repeat;
+  animation: oth-slide-mask 1s steps(24) forwards;
+  top: 0%;
+  left: 0%;
+}
+
+.oth-bonus-numbers-scratch-mask {
+  z-index: 1;
+  height: 100%;
+  width: auto;
+  mask-image: url('../../../assets/individual-scratch-mask.png');
+  mask-position: left;
+  transform-origin: top left;
+  mask-size: 2500% 100%;
+  mask-repeat: no-repeat;
+  animation: oth-slide-mask 1s steps(24) forwards;
+  top: 0%;
+  left: 0%;
+}
+
+@keyframes oth-slide-mask {
+  0% {
+    mask-position: 0 0;
+  }
+  100% {
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes fadeIn {
+  0%,
+  6% {
+    opacity: 0;
+  }
+  7%,
+  90% {
+    opacity: 1;
+  }
+  93%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes winTextFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.1);
+  }
+}
+
+@keyframes scaleUpDown {
+  0%,
+  6% {
+    transform: scale(0.25);
+  }
+  8%,
+  90% {
+    transform: scale(1);
+  }
+  93% {
+    transform: scale(0.25);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bottleShake {
+  0%,
+  42% {
+    transform: rotate(20deg);
+  }
+  45% {
+    transform: rotate(28deg);
+  }
+  48% {
+    transform: rotate(12deg);
+  }
+  51% {
+    transform: rotate(28deg);
+  }
+  54% {
+    transform: rotate(12deg);
+  }
+  57% {
+    transform: rotate(25deg);
+  }
+  60%,
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes bonusBottleFade {
+  0%,
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bottleTextFadeIn {
+  0%,
+  47% {
+    opacity: 0;
+  }
+  50%,
+  89% {
+    opacity: 1;
+  }
+  92%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bonusSpotWin {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes idleBuyButton {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes megaWinColorChange {
+  0%,
+  48% {
+    color: #aced02;
+    -webkit-text-stroke: 1.5px #048012;
+  }
+  51%,
+  69% {
+    color: #ade8ec;
+    -webkit-text-stroke: 1.5px #02339b;
+  }
+  72%,
+  100% {
+    color: #ecb927;
+    -webkit-text-stroke: 1.5px #000000;
+  }
+}
+
+@keyframes superWinColorChange {
+  0%,
+  50% {
+    color: #aced02;
+    -webkit-text-stroke: 1.5px #048012;
+  }
+  56%,
+  100% {
+    color: #ade8ec;
+    -webkit-text-stroke: 1.5px #02339b;
+  }
+}
+
+@keyframes fadeToBlack {
+  0% {
+    filter: brightness(1);
+    /* opacity: 1; */
+  }
+  100% {
+    filter: brightness(0);
+    /* opacity: 0; */
+  }
+}
+
+@keyframes fadeFromBlack {
+  0% {
+    filter: brightness(0);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes fadeInGame {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutGame {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes previewPrizePulse {
+  0% {
+    transform: translateZ(0);
+  }
+  50% {
+    transform: translateZ(50px);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}

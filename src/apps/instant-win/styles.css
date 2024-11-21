@@ -1,0 +1,55 @@
+.individual-scratch-mask {
+  z-index: 1;
+  height: 100%;
+  width: auto;
+  mask-image: url('./assets/individual-scratch-mask.png');
+  mask-position: left;
+  transform-origin: top left;
+  mask-size: 2500% 100%;
+  mask-repeat: no-repeat;
+  animation: slide-mask 1s steps(24) forwards;
+  top: 0%;
+  left: 0%;
+}
+
+@keyframes slide-mask {
+  0% {
+    mask-position: 0 0;
+  }
+  100% {
+    mask-position: 100% 0;
+  }
+}
+
+/* Simple Bet Bar coin burst sprite */
+
+.coinBurst {
+  position: relative;
+  overflow: hidden;
+}
+
+.coinBurst::before {
+  overflow: hidden;
+  content: '';
+  position: absolute;
+  top: -60.5px;
+  left: -70.5px;
+  width: 115px;
+  height: 76px;
+  background-image: url(../instant-win/assets/coinBurst-large.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: auto 100%;
+  transform-origin: top left;
+  transform: scale(1.75);
+  animation: coinBurst 1.5s steps(50);
+}
+
+@keyframes coinBurst {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}

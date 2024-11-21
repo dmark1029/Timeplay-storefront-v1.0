@@ -1,0 +1,38 @@
+:root {
+  --circle-selector-radius: 7.5rem;
+}
+
+.PPnumber {
+  position: absolute;
+}
+
+.PPnumber:nth-child(1) {
+  transform: rotate(270deg) translate(var(--circle-selector-radius)) rotate(-270deg);
+}
+.PPnumber:nth-child(2) {
+  transform: rotate(306deg) translate(var(--circle-selector-radius)) rotate(-306deg);
+}
+.PPnumber:nth-child(3) {
+  transform: rotate(342deg) translate(var(--circle-selector-radius)) rotate(-342deg);
+}
+.PPnumber:nth-child(4) {
+  transform: rotate(18deg) translate(var(--circle-selector-radius)) rotate(-18deg);
+}
+.PPnumber:nth-child(5) {
+  transform: rotate(54deg) translate(var(--circle-selector-radius)) rotate(-54deg);
+}
+.PPnumber:nth-child(6) {
+  transform: rotate(90deg) translate(var(--circle-selector-radius)) rotate(-90deg);
+}
+.PPnumber:nth-child(7) {
+  transform: rotate(126deg) translate(var(--circle-selector-radius)) rotate(-126deg);
+}
+.PPnumber:nth-child(8) {
+  transform: rotate(162deg) translate(var(--circle-selector-radius)) rotate(-162deg);
+}
+.PPnumber:nth-child(9) {
+  transform: rotate(198deg) translate(var(--circle-selector-radius)) rotate(-198deg);
+}
+.PPnumber:nth-child(10) {
+  transform: rotate(234deg) translate(var(--circle-selector-radius)) rotate(-234deg);
+}

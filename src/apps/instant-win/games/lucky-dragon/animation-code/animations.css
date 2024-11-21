@@ -1,0 +1,121 @@
+.lucky-symbols-header {
+  position: relative;
+  width: 55%;
+  height: 2rem;
+  background: linear-gradient(to bottom, #8b0000, #a80000);
+  border: 1.75px solid gold;
+  border-radius: 5px;
+  transform: perspective(500px) rotateX(40deg);
+  z-index: 1;
+}
+
+/* TODO: ADD 3D EFFECT FOR LUCKY SYMBOLS HEADER */
+/* .lucky-symbols-header::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background-color: #8b0000;
+  transform: perspective(250px) rotateX(-40deg);
+  z-index: -1;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+} */
+
+.lucky-symbols-header p {
+  color: rgb(249, 226, 93);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.user-symbol-bg {
+  background-image: url('../assets/user-numbers-items-bg.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bonus-background {
+  background-image: url('../assets/fortune-cookie-bg.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.fortune-paper {
+  background-image: url('../assets/fortune-paper.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.winState {
+  position: relative;
+}
+
+.winState::before {
+  position: absolute;
+  content: '';
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 79, 1) 0%,
+    rgb(255, 232, 164) 50%,
+    rgba(255, 213, 79, 1) 100%
+  );
+  filter: blur(8px);
+  box-shadow:
+    1px 1px 5px white,
+    1px -1px 5px white,
+    -1px 1px 5px white,
+    -1px -1px 5px white;
+  animation: caseGlow 6s infinite;
+}
+
+.winState::after {
+  position: absolute;
+  content: '';
+  height: 75%;
+  width: 90%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  border: 2px #facc15 solid;
+  z-index: 1;
+  background-color: #252525;
+  animation: caseMatch 0.5s forwards;
+}
+
+@keyframes caseGlow {
+  0%,
+  5% {
+    opacity: 0;
+  }
+  5%,
+  95% {
+    opacity: 1;
+  }
+  95%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes caseMatch {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

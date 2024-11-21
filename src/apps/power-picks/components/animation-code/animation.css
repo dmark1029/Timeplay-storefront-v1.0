@@ -1,0 +1,53 @@
+.ballRollAnimation {
+  position: relative;
+  animation: roll 1s cubic-bezier(0.06, 1.1, 0.86, 1.09) forwards;
+}
+
+.ballShadowAnimation {
+  position: relative;
+  animation: slideLeft 1s cubic-bezier(0.06, 1.1, 0.86, 1.09) forwards;
+}
+
+.lottoBallFadeOut {
+  animation: fadeOut 1s infinite;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.lottoBallFadeOut {
+  animation: fadeOut 1s infinite;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-720deg);
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    left: 500%;
+  }
+  100% {
+    left: 1%;
+  }
+}

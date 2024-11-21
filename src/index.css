@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Roboto', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  /* DEBUGGING */
+  /* outline: 1px dashed red; */
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'Loyola Round';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/loyolaRound.TTF');
+}
+
+@font-face {
+  font-family: 'Loyola Round Pro Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/loyolaRoundProBold.ttf');
+}
+
+@font-face {
+  font-family: 'Dic Sans Black';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/dicSans_Black.otf');
+}
+
+@font-face {
+  font-family: 'Tempo Standard Heavy Condensed';
+  font-style: normal;
+  font-weight: 900;
+  src: url('./assets/fonts/tempoStdHeavyCondensed.otf');
+}
+
+@font-face {
+  font-family: 'Eurostile Extended';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/eurostile-extended-regular.TTF');
+}
+
+@font-face {
+  font-family: 'Eurostile Extended Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/eurostile-bold-extended.OTF');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Passion One';
+  src: url('./assets/fonts/PassionOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.no-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Edge */
+}

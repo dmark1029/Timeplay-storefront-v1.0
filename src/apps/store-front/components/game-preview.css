@@ -1,0 +1,31 @@
+  .label {
+    margin-top: 176px;
+    height: 627px;
+    width: 285px;
+  }
+  
+  .label .ent-text {
+    color: #ffffff;
+    font-family: "Tempo Std-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    position: fixed;
+    width: 285px;
+    line-height: 15px;
+    
+  }
+  
+  .label .text-wrapper {
+    letter-spacing: -0.07px;
+  }
+  
+  .label .span {
+    font-family: "Roboto", Helvetica;
+    font-size: 15px;
+    letter-spacing: -0.05px;
+  }
+
+  .label .linebreak {
+    margin: 16px 0;
+  }

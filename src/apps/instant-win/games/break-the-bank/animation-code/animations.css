@@ -1,0 +1,908 @@
+/* intro-animation.tsx */
+.dondPreview {
+  width: 100%;
+  z-index: 20;
+}
+
+.dondDefaultText {
+  font-family: 'Eurostile Extended Bold';
+}
+
+.dondBonusSpot {
+  font-family: 'Eurostile Extended Bold';
+  font-size: xx-small;
+}
+
+.dondContent {
+  height: 50vh;
+  overflow: scroll;
+}
+
+.dondTopPrize {
+  background: linear-gradient(to right, #f7dc44, #ffffff, #f7dc44);
+  color: transparent;
+  margin: 0.25em 0;
+  background-clip: text;
+  text-align: center;
+  animation: 1.3s ease-in-out 0s infinite previewPrizePulse;
+  width: 90%;
+  margin: 5% auto;
+  letter-spacing: -2px;
+}
+
+.dondWinPulse {
+  animation: 1s ease-in-out 0s infinite dondWinPulse;
+}
+
+/* preview page */
+.background {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+.previewContainer {
+  position: relative;
+  height: 100%;
+}
+
+.background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gameIntro {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 45;
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  inset: 0;
+}
+
+.splash {
+  height: 100%;
+}
+
+.splash video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.dondLuckySymbols,
+.dondMatch3,
+.dondBonus,
+.dondTicketPrice {
+  position: relative;
+  margin-top: 2em;
+}
+
+.dondWindow {
+  width: 85%;
+  margin: 0 auto;
+  border: 2px #ffe16b solid;
+  border-radius: 10px;
+  background: linear-gradient(to right, #ffe16b 10%, #fef3c7 50%, #ffe16b 90%);
+  filter: drop-shadow(0px 10px 15px #000000);
+}
+
+.dondSign {
+  background: linear-gradient(to right, #ffe16b 10%, #fef3c7 50%, #ffe16b 90%);
+  overflow: hidden;
+  padding: 5px 0px 5px;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.dondSign p {
+  font-family: 'Eurostile Extended Bold';
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.dondText {
+  font-size: 12px;
+  color: white;
+  font-family: 'Eurostile Extended Bold';
+}
+
+.dondWindowContent {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: 'Eurostile Extended Bold';
+  font-weight: 700;
+  line-height: 1.1;
+  background-color: black;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.luckyCase {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.luckyCase p {
+  position: absolute;
+  color: black;
+  font-size: 1em;
+  bottom: 40%;
+  -webkit-text-stroke: #fff;
+  -webkit-text-stroke-width: 1px;
+}
+
+.match3Cases {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+
+.match3Cases img {
+  width: 35%;
+  padding: 2px;
+}
+
+.luckyCase img {
+  width: 70%;
+}
+
+.bankersPhoneBackground {
+  width: 50%;
+  padding-left: 10px;
+}
+
+.playNow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* play now button */
+.dondPlayNowButton {
+  background: linear-gradient(to right, #ffe16b 10%, #fef3c7 50%, #ffe16b 90%);
+  height: 60px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.05s linear;
+  border-radius: 7px;
+  border: 2px #fef3c7 solid;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.dondPlayNowButton::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 225, 107, 0) 0%,
+    rgba(255, 225, 107, 1) 50%,
+    rgba(255, 225, 107, 0) 100%
+  );
+  background-size: 200% 200%;
+  animation: linearGlow 3s linear infinite;
+  z-index: -1;
+  filter: blur(15px);
+}
+
+.dondPlayNowButton p {
+  font-family: 'Eurostile Extended Bold';
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.dondPlayNowButton p:nth-child(2) {
+  font-size: 10px;
+  letter-spacing: -0.5px;
+  margin-bottom: 2px;
+}
+
+.dondPriceText {
+  margin: 0 auto;
+}
+
+.dondOddsExtras {
+  margin-top: 25px;
+}
+
+.dondOddsExtrasImageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dondOddsExtras p {
+  font-family: 'Eurostile Extended Bold';
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.dondTopPrizeOdds {
+  background: linear-gradient(to right, #ffe16b 10%, #fef3c7 50%, #ffe16b 90%);
+  height: 50px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.05s linear;
+  border-radius: 7px;
+  border: 2px #fef3c7 solid;
+  cursor: pointer;
+  color: black;
+  margin-bottom: 5px;
+}
+
+#scroll-end-marker {
+  color: white; /* Sets text color to white */
+  -webkit-text-stroke: #000000;
+  -webkit-text-stroke-width: 1px;
+}
+
+/* down arrow */
+.dondDownArrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.dondDownArrow img {
+  width: 25%;
+  animation: 1s ease-in-out 0s infinite previewPrizePulse;
+}
+
+@media (max-height: 800px) {
+  .dondDownArrow {
+    bottom: 2%;
+  }
+}
+
+/* case opening css */
+.caseTextTop svg {
+  position: relative;
+  bottom: 4px;
+  height: 30%;
+  font-size: 1.2em;
+}
+
+.caseTextBottom svg {
+  height: 35%;
+  position: relative;
+  top: 5px;
+  font-size: 1.2em;
+}
+
+.sprite-container {
+  position: absolute;
+  top: -4.5px;
+  left: -6.5px;
+  width: 92px;
+  height: 76px;
+  background-image: url('../assets/openingSprites.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  animation: animateSprite 0.5s steps(16) forwards;
+  transform: scale(0.75);
+  transform-origin: top left;
+}
+
+.dond-lucky-numbers-scratch-mask {
+  z-index: 1;
+  height: 100%;
+  width: auto;
+  mask-image: url('../../../assets/individual-scratch-mask.png');
+  mask-position: left;
+  transform-origin: top left;
+  mask-size: 2500% 100%;
+  mask-repeat: no-repeat;
+  animation: oth-slide-mask 1s steps(24) forwards;
+  top: 0%;
+  left: 0%;
+}
+
+.dond-user-numbers-scratch-mask {
+  z-index: 1;
+  height: 100%;
+  width: auto;
+  mask-image: url('../../../assets/individual-scratch-mask.png');
+  mask-position: left;
+  transform-origin: top left;
+  mask-size: 2500% 100%;
+  mask-repeat: no-repeat;
+  animation: oth-slide-mask 1s steps(24) forwards;
+  top: 0%;
+  left: 0%;
+}
+
+.dond-match-numbers-scratch-mask {
+  z-index: 1;
+  height: 100%;
+  width: auto;
+  mask-image: url('../../../assets/individual-scratch-mask.png');
+  mask-position: left;
+  transform-origin: top left;
+  mask-size: 2500% 100%;
+  mask-repeat: no-repeat;
+  animation: oth-slide-mask 1s steps(24) forwards;
+  top: 0%;
+  left: 0%;
+}
+
+.dond-bonus-numbers-scratch-mask {
+  z-index: 1;
+  height: 100%;
+  width: auto;
+  mask-image: url('../../../assets/individual-scratch-mask.png');
+  mask-position: left;
+  transform-origin: top left;
+  mask-size: 2500% 100%;
+  mask-repeat: no-repeat;
+  animation: oth-slide-mask 1s steps(24) forwards;
+  top: 0%;
+  left: 0%;
+}
+
+@keyframes dond-slide-mask {
+  0% {
+    mask-position: 0 0;
+  }
+  100% {
+    mask-position: 100% 0;
+  }
+}
+
+@media (max-height: 667px) {
+  .sprite-container {
+    transform: scale(0.65);
+  }
+}
+
+@media (max-height: 760px) {
+  .sprite-container {
+    transform: scale(0.65);
+  }
+}
+
+@media (max-height: 800px) {
+  .sprite-container {
+    transform: scale(0.65);
+  }
+}
+
+@media (max-height: 1180px) {
+  .dondArrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-height: 1024px) {
+  .sprite-container {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 375px) {
+  .dondPlayNowButton {
+    margin: 5px;
+  }
+
+  .dondPlayNowButton p {
+    font-family: 'Eurostile Extended Bold';
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+}
+
+.canvas {
+  width: 500px;
+  height: 500px;
+}
+
+.canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+#confettiCanvas {
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 150%;
+  height: 200%;
+  pointer-events: none; /* Ensure the canvas doesn't block user interactions */
+}
+
+.caseShine {
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(
+    62.5% 2% /* top right handle corner node */,
+    38.5% 2% /* top left handle corner node */,
+    33.5% 8% /* bottom left handle corner node */,
+    10% 9% /* top left top node */,
+    5% 12% /* top left center node */,
+    0% 20% /* top left bottom corner node */,
+    0% 90% /* bottom left top corner node */,
+    3% 97% /* bottom left center corner node */,
+    9% 100% /* bottom left first corner node */,
+    93% 100% /* bottom right left corner node */,
+    97% 97% /* bottom right center corner node */,
+    100% 90% /* bottom right right corner node */,
+    100% 20% /* top right end corner node */,
+    96% 12.5% /* top right center corner node */,
+    90% 9% /* top right first corner node */,
+    65.5% 8% /* bottom right handle corner node */
+  );
+}
+
+.caseShine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.7) 30%,
+    transparent 100%
+  );
+  transform: skewX(-30deg);
+  animation: shine 1s cubic-bezier(0.27, 0.42, 0.67, 0.94) 1 both;
+  z-index: 1;
+}
+
+.buyButtonShine {
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(
+    83% 0%,
+    16% 0%,
+    10% 4%,
+    10% 12%,
+    10% 90%,
+    10% 94.5%,
+    14.5% 100%,
+    85% 100%,
+    90% 95%,
+    90% 88%,
+    90% 8%,
+    89% 3%
+  );
+}
+
+.buyButtonShine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.8) 60%,
+    transparent 100%
+  );
+  transform: skewX(-30deg);
+  animation: shine 1.25s cubic-bezier(0.27, 0.42, 0.67, 0.94) 1 both;
+  z-index: 1;
+}
+
+.visible {
+  animation: fadeInDond 200ms ease-in backwards;
+}
+
+.winGlow,
+.match3Glow {
+  position: relative;
+}
+
+.winGlow::before {
+  position: absolute;
+  content: '';
+  width: 80%;
+  height: 80%;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 79, 1) 0%,
+    rgb(255, 232, 164) 50%,
+    rgba(255, 213, 79, 1) 100%
+  );
+  filter: blur(8px);
+  box-shadow:
+    1px 1px 2px white,
+    1px -1px 2px white,
+    -1px 1px 2px white,
+    -1px -1px 2px white;
+  animation: caseGlow 6s infinite;
+}
+
+.dondWin h2 {
+  font-family: 'Eurostile Extended Bold';
+  font-weight: 700;
+  font-size: 1.25em;
+  color: black;
+  top: 17.9%;
+}
+
+.dondWinAnimationContainer {
+  z-index: 30;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dondWinAnimationContainer h2 {
+  width: 60%;
+  text-align: center;
+  font-family: 'Eurostile Extended Bold';
+  position: relative;
+  top: 18%;
+  margin: 0 auto;
+}
+
+.dondNormalWin h2 {
+  animation:
+    0.1s linear 2s winTextFade backwards,
+    0.05s linear 2.1s scaleUp backwards,
+    0.3s linear 7.35s fadeOut forwards;
+}
+
+.dondBigWin h2 {
+  animation:
+    0.1s linear 2s winTextFade backwards,
+    0.05s linear 2.1s scaleUp backwards,
+    0.3s linear 7.35s fadeOut forwards;
+}
+
+.dondSuperWin h2 {
+  animation:
+    0.1s linear 1.95s winTextFade backwards,
+    0.05s linear 2s scaleUp backwards,
+    0.3s linear 10s fadeOut forwards;
+}
+
+.dondMegaWin h2 {
+  animation:
+    0.1s linear 1.95s winTextFade backwards,
+    0.05s linear 2s scaleUp backwards,
+    0.3s linear 14s fadeOut forwards;
+}
+
+.match3Glow::before {
+  position: absolute;
+  content: '';
+  width: 80%;
+  height: 45%;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 213, 79, 1) 0%,
+    rgb(255, 232, 164) 50%,
+    rgba(255, 213, 79, 1) 100%
+  );
+  filter: blur(8px);
+  box-shadow:
+    1px 1px 2px white,
+    1px -1px 2px white,
+    -1px 1px 2px white,
+    -1px -1px 2px white;
+  animation: caseGlow 6s infinite;
+}
+
+.match3Glow::after {
+  position: absolute;
+  content: '';
+  height: 60%;
+  width: 89%;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(255, 213, 79, 1) 0%,
+    rgb(251, 234, 184) 35% 65%,
+    rgba(255, 213, 79, 1) 100%
+  );
+  animation: caseMatch 0.5s forwards;
+  perspective: 500px;
+}
+
+.winGlow::after {
+  position: absolute;
+  content: '';
+  height: 69%;
+  width: 73%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(255, 213, 79, 1) 0%,
+    rgb(251, 234, 184) 35% 65%,
+    rgba(255, 213, 79, 1) 100%
+  );
+  animation: caseMatch 0.5s forwards;
+}
+
+.textPulse {
+  animation: pulsing 6s infinite;
+}
+
+.bonusWin {
+  animation: 2s bonusSpot 1s infinite forwards;
+}
+
+.dondBonusWinClosed {
+  position: relative;
+  background-image: url(../assets/bonus-spot-bg.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}
+
+.dondBonusWinClosed::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  animation: 0.3s ease-out 1.3s backwards fadeOpacity;
+  z-index: 1;
+  background: black;
+  border-radius: 7px;
+}
+
+.dondBonusWinOpened {
+  animation: 0.01s linear 0s forwards bonusFadeIn;
+}
+
+.dondBonusWinOpened::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+  border-radius: 7px;
+}
+
+.dondBonusSpotBackground {
+  position: relative;
+  background-image: url(../assets/bonus-spot-bg.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}
+
+.dondBonusSpotBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+  border-radius: 7px;
+}
+
+.dondMatch3Overlay {
+  opacity: 0;
+  animation: match3OverlayFadeIn 0.5s ease-in-out 1.5s forwards;
+}
+
+@keyframes match3OverlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOpacity {
+  0% {
+    filter: opacity(0);
+  }
+  100% {
+    filter: opacity(1);
+  }
+}
+
+@keyframes bonusFadeIn {
+  0% {
+    filter: brightness(0);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes caseGlow {
+  0%,
+  5% {
+    opacity: 0;
+  }
+  5%,
+  95% {
+    opacity: 1;
+  }
+  95%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes caseMatch {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDond {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes previewPrizePulse {
+  0% {
+    transform: translateZ(0);
+  }
+  50% {
+    transform: translateZ(50px);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    scale: (1);
+  }
+  50% {
+    scale: (1.25);
+  }
+  0% {
+    scale: (1);
+  }
+}
+
+@keyframes bonusSpot {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* glow for play now button */
+@keyframes linearGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes dondWinPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animateSprite {
+  0% {
+    background-position: 0 0; /* Start at the first frame */
+  }
+  100% {
+    background-position: -1472px 0; /* Move to the last frame (92px * 16 frames) */
+  }
+}
